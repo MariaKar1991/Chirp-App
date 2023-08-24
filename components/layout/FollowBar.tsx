@@ -2,9 +2,16 @@ import useUsers from "@/hooks/useUsers";
 
 import Avatar from "../Avatar";
 
+/**
+ * Component to display a list of users to follow.
+ * Uses the `useUsers` hook to fetch a list of users.
+ */
 const FollowBar = () => {
+  // Fetch the list of users using the useUsers hook.
+  // The data is defaulted to an empty array if not available.
   const { data: users = [] } = useUsers();
 
+  // If there are no users to display, return null to render nothing.
   if (users.length === 0) {
     return null;
   }

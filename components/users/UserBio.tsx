@@ -7,18 +7,40 @@ import Button from "../Button";
 import useEditModal from "@/hooks/useEditModal";
 import useFollow from "@/hooks/useFollow";
 
+/**
+ * Props for the UserBio component.
+ *
+ * @typedef {Object} UserBioProps
+ * @property {string} userId - The ID of the user.
+ */
 interface UserBioProps {
   userId: string;
 }
 
+/**
+ * Component for rendering the user's bio section.
+ *
+ * @component
+ * @param {UserBioProps} props - Props containing the user's ID.
+ */
 const UserBio: React.FC<UserBioProps> = ({ userId }) => {
   const { data: currentUser } = useCurrentUser();
   const { data: fetchedUser } = useUser(userId);
 
   const editModal = useEditModal();
 
+  /**
+   * Fetch follow status and follow/unfollow function using the useFollow hook.
+   *
+   * @type {Object}
+   */
   const { isFollowing, toggleFollow } = useFollow(userId);
 
+  /**
+   * Format the user's creation date for display.
+   *
+   * @type {string|null}
+   */
   const createdAt = useMemo(() => {
     if (!fetchedUser?.createdAt) {
       return null;

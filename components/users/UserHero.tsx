@@ -4,10 +4,23 @@ import useUser from "@/hooks/useUser";
 
 import Avatar from "../Avatar";
 
+/**
+ * Props for the UserHero component.
+ *
+ * @typedef {Object} UserHeroProps
+ * @property {string} userId - The ID of the user.
+ */
+
 interface UserHeroProps {
   userId: string;
 }
 
+/**
+ * Component for rendering the hero section of a user's profile.
+ *
+ * @component
+ * @param {UserHeroProps} props - Props containing the user's ID.
+ */
 const UserHero: React.FC<UserHeroProps> = ({ userId }) => {
   const { data: fetchedUser } = useUser(userId);
 

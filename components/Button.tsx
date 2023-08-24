@@ -1,3 +1,6 @@
+/**
+ * Props for the Button component.
+ */
 interface ButtonProps {
   label: string;
   secondary?: boolean;
@@ -8,6 +11,12 @@ interface ButtonProps {
   outline?: boolean;
 }
 
+/**
+ * Component for rendering a customizable button.
+ *
+ * @component
+ * @param {ButtonProps} props - Props for customizing the button's appearance and behavior.
+ */
 const Button: React.FC<ButtonProps> = ({
   label,
   secondary,

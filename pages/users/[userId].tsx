@@ -6,6 +6,10 @@ import UserBio from "@/components/users/UserBio";
 import UserHero from "@/components/users/UserHero";
 import PostFeed from "@/components/posts/PostFeed";
 
+/**
+ * Component for displaying a detailed view of a user's profile.
+ * @returns JSX containing user information, user hero section, and post feed.
+ */
 const UserView = () => {
   const router = useRouter();
   const { userId } = router.query;

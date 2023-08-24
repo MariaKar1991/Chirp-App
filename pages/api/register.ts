@@ -3,6 +3,12 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 import prisma from "@/libs/prismadb";
 
+/**
+ * API handler for user registration.
+ * @param req - The NextApiRequest object representing the incoming request.
+ * @param res - The NextApiResponse object representing the response to send.
+ * @returns The response with the registered user's information or an error status.
+ */
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse

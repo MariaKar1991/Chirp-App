@@ -8,6 +8,10 @@ import Form from "@/components/Form";
 import PostItem from "@/components/posts/PostItem";
 import CommentFeed from "@/components/posts/CommentFeed";
 
+/**
+ * Component for displaying a detailed view of a single post.
+ * @returns JSX containing the post details, comment form, and comment feed.
+ */
 const PostView = () => {
   const router = useRouter();
   const { postId } = router.query;

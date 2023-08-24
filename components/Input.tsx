@@ -1,3 +1,6 @@
+/**
+ * Props for the Input component.
+ */
 interface InputProps {
   placeholder?: string;
   value?: string;
@@ -7,6 +10,12 @@ interface InputProps {
   label?: string;
 }
 
+/**
+ * Component for rendering an input field.
+ *
+ * @component
+ * @param {InputProps} props - Props for configuring the input field.
+ */
 const Input: React.FC<InputProps> = ({
   placeholder,
   value,

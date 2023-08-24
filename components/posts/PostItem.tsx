@@ -8,11 +8,25 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 import useLike from "@/hooks/useLike";
 
 import Avatar from "../Avatar";
+
+/**
+ * Props for the PostItem component.
+ *
+ * @typedef {Object} PostItemProps
+ * @property {Object} data - The post data.
+ * @property {string} userId - The user's ID.
+ */
 interface PostItemProps {
   data: Record<string, any>;
   userId?: string;
 }
 
+/**
+ * Component for rendering an individual post.
+ *
+ * @component
+ * @param {PostItemProps} props - Props containing the post data and user's ID.
+ */
 const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
   const router = useRouter();
   const loginModal = useLoginModal();
@@ -20,6 +34,11 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
   const { data: currentUser } = useCurrentUser();
   const { hasLiked, toggleLike } = useLike({ postId: data.id, userId });
 
+  /**
+   * Navigate to the user's profile page.
+   *
+   * @param {Event} ev - The click event.
+   */
   const goToUser = useCallback(
     (ev: any) => {
       ev.stopPropagation();
@@ -28,10 +47,18 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
     [router, data.user.id]
   );
 
+  /**
+   * Navigate to the post page.
+   */
   const goToPost = useCallback(() => {
     router.push(`/posts/${data.id}`);
   }, [router, data.id]);
 
+  /**
+   * Handle the like action.
+   *
+   * @param {Event} ev - The click event.
+   */
   const onLike = useCallback(
     async (ev: any) => {
       ev.stopPropagation();
@@ -45,8 +72,16 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
     [loginModal, currentUser, toggleLike]
   );
 
+  /**
+   * Determine the appropriate Like icon based on like status.
+   */
   const LikeIcon = hasLiked ? AiFillHeart : AiOutlineHeart;
 
+  /**
+   * Format the post creation date for display.
+   *
+   * @type {string|null}
+   */
   const createdAt = useMemo(() => {
     if (!data?.createdAt) {
       return null;

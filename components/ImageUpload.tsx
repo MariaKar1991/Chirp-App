@@ -2,6 +2,10 @@ import { useDropzone } from "react-dropzone";
 import { useCallback, useState } from "react";
 import Image from "next/image";
 
+/**
+ * Props for the ImageUpload
+ * component.
+ */
 interface ImageUploadProps {
   onChange: (base64: string) => void;
   label: string;
@@ -9,6 +13,12 @@ interface ImageUploadProps {
   disabled?: boolean;
 }
 
+/**
+ * Component for uploading images using a drop zone with previews.
+ *
+ * @component
+ * @param {ImageUploadProps} props - Props for configuring the image upload behavior and appearance.
+ */
 const ImageUpload: React.FC<ImageUploadProps> = ({
   onChange,
   label,
@@ -17,6 +27,11 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
 }) => {
   const [base64, setBase64] = useState(value);
 
+  /**
+   * Handles changes when an image is selected or uploaded.
+   *
+   * @param {string} base64 - The base64-encoded representation of the uploaded image.
+   */
   const handleChange = useCallback(
     (base64: string) => {
       onChange(base64);
@@ -24,6 +39,11 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     [onChange]
   );
 
+  /**
+   * Handles the drop event when an image is added to the drop zone.
+   *
+   * @param {Array<File>} files - An array of dropped files.
+   */
   const handleDrop = useCallback(
     (files: any) => {
       const file = files[0];

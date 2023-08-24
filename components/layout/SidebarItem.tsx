@@ -6,6 +6,9 @@ import useLoginModal from "@/hooks/useLoginModal";
 
 import { BsDot } from "react-icons/bs";
 
+/**
+ * SidebarItemProps interface defines the props expected by the SidebarItem component.
+ */
 interface SidebarItemProps {
   label: string;
   icon: IconType;
@@ -15,6 +18,12 @@ interface SidebarItemProps {
   alert?: boolean;
 }
 
+/**
+ * SidebarItem component represents an individual item in the sidebar.
+ *
+ * @param {SidebarItemProps} props - The props for the SidebarItem component.
+ * @returns {JSX.Element} The rendered SidebarItem component.
+ */
 const SidebarItem: React.FC<SidebarItemProps> = ({
   label,
   href,
@@ -23,14 +32,18 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   auth,
   alert,
 }) => {
+  // Initialize hooks and utilities
   const loginModal = useLoginModal();
   const { data: currentUser } = useCurrentUser();
   const router = useRouter();
+
+  // Handle click event for the sidebar item
   const handleClick = useCallback(() => {
     if (onClick) {
       return onClick();
     }
 
+    // Handle authentication and navigation
     if (auth && !currentUser) {
       loginModal.onOpen();
     } else if (href) {
@@ -38,6 +51,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     }
   }, [router, onClick, href, currentUser, auth, loginModal]);
 
+  // Render the SidebarItem component
   return (
     <div onClick={handleClick} className="flex flex-row items-center">
       <div

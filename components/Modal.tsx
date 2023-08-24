@@ -4,6 +4,9 @@ import { AiOutlineClose } from "react-icons/ai";
 
 import Button from "./Button";
 
+/**
+ * Props for the Modal component.
+ */
 interface ModalProps {
   isOpen?: boolean;
   onClose: () => void;
@@ -15,6 +18,12 @@ interface ModalProps {
   disabled?: boolean;
 }
 
+/**
+ * A reusable modal component for displaying content, forms, and actions.
+ *
+ * @component
+ * @param {ModalProps} props - Props for configuring the modal behavior and content.
+ */
 const Modal: React.FC<ModalProps> = ({
   isOpen,
   onClose,

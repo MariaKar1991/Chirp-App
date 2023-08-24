@@ -10,6 +10,9 @@ import useRegisterModal from "@/hooks/useRegisterModal";
 import Input from "../Input";
 import Modal from "../Modal";
 
+/**
+ * Component for rendering the registration modal.
+ */
 const RegisterModal = () => {
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
@@ -21,6 +24,9 @@ const RegisterModal = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
+  /**
+   * Toggles between registration and login modals.
+   */
   const onToggle = useCallback(() => {
     if (isLoading) {
       return;
@@ -30,10 +36,14 @@ const RegisterModal = () => {
     loginModal.onOpen();
   }, [loginModal, registerModal, isLoading]);
 
+  /**
+   * Handles form submission for user registration.
+   */
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
 
+      // Make a request to the registration API endpoint.
       await axios.post("/api/register", {
         email,
         password,
@@ -41,13 +51,16 @@ const RegisterModal = () => {
         name,
       });
 
+      // Show success message.
       toast.success("Account created.");
 
+      // Automatically sign in the newly registered user.
       signIn("credentials", {
         email,
         password,
       });
 
+      // Close the registration modal.
       registerModal.onClose();
     } catch (error) {
       toast.error("Something went wrong");
@@ -56,6 +69,7 @@ const RegisterModal = () => {
     }
   }, [email, password, registerModal, username, name]);
 
+  // JSX content for the registration form fields.
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Input
@@ -86,6 +100,7 @@ const RegisterModal = () => {
     </div>
   );
 
+  // JSX content for the footer section of the modal.
   const footerContent = (
     <div className="text-neutral-400 text-center mt-4">
       <p>
@@ -105,6 +120,7 @@ const RegisterModal = () => {
     </div>
   );
 
+  // Render the registration modal.
   return (
     <Modal
       disabled={isLoading}

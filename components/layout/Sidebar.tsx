@@ -7,11 +7,18 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 
 import SidebarItem from "./SidebarItem";
 import SidebarLogo from "./SidebarLogo";
-import SidebarTweetButton from "./SidebarTweetButton";
+import SidebarChirpButton from "./SidebarChirpButton";
 
+/**
+ * Sidebar component displays navigation links and user actions.
+ *
+ * @returns {JSX.Element} The rendered Sidebar component.
+ */
 const Sidebar = () => {
+  // Fetch the current user's data.
   const { data: currentUser } = useCurrentUser();
 
+  // Sidebar items configuration.
   const items = [
     {
       label: "Home",
@@ -33,6 +40,7 @@ const Sidebar = () => {
     },
   ];
 
+  // Render the Sidebar component.
   return (
     <div className="col-span-1 h-full pr-4 md:pr-6">
       <div className="flex flex-col items-end">
@@ -55,7 +63,7 @@ const Sidebar = () => {
               label="Logout"
             />
           )}
-          <SidebarTweetButton />
+          <SidebarChirpButton />
         </div>
       </div>
     </div>

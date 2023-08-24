@@ -10,12 +10,26 @@ import axios from "axios";
 import Avatar from "./Avatar";
 import Button from "./Button";
 
+/**
+ * Props for the Form component.
+ *
+ * @typedef {Object} FormProps
+ * @property {string} placeholder - The placeholder text for the input textarea.
+ * @property {boolean} [isComment] - Indicates whether the form is used for commenting.
+ * @property {string} [postId] - The ID of the post, required when commenting.
+ */
 interface FormProps {
   placeholder: string;
   isComment?: boolean;
   postId?: string;
 }
 
+/**
+ * Component for rendering a form for creating posts or comments.
+ *
+ * @component
+ * @param {FormProps} props - Props for customizing the form's behavior and appearance.
+ */
 const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();

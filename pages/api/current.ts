@@ -2,6 +2,12 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 import serverAuth from "@/libs/serverAuth";
 
+/**
+ * API handler for retrieving the current user's information.
+ * @param req - The NextApiRequest object representing the incoming request.
+ * @param res - The NextApiResponse object representing the response to send.
+ * @returns The response with the current user's information or an error status.
+ */
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse

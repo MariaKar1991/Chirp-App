@@ -8,9 +8,27 @@ interface CommentItemProps {
   data: Record<string, any>;
 }
 
+/**
+ * Props for the CommentItem component.
+ *
+ * @typedef {Object} CommentItemProps
+ * @property {Object} data - The comment data.
+ */
+
+/**
+ * Component for rendering an individual comment.
+ *
+ * @component
+ * @param {CommentItemProps} props - Props containing the comment data.
+ */
 const CommentItem: React.FC<CommentItemProps> = ({ data = {} }) => {
   const router = useRouter();
 
+  /**
+   * Callback function to navigate to the user's profile page.
+   *
+   * @param {Event} ev - The click event.
+   */
   const goToUser = useCallback(
     (ev: any) => {
       ev.stopPropagation();
@@ -20,6 +38,11 @@ const CommentItem: React.FC<CommentItemProps> = ({ data = {} }) => {
     [router, data.user.id]
   );
 
+  /**
+   * Calculate the time distance from the comment's creation date to now.
+   *
+   * @type {string|null}
+   */
   const createdAt = useMemo(() => {
     if (!data?.createdAt) {
       return null;

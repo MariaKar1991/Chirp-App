@@ -8,6 +8,12 @@ import Modal from "../Modal";
 import Input from "../Input";
 import ImageUpload from "../ImageUpload";
 
+/**
+ * EditModal component displays a modal for editing the user's profile details.
+ * It allows users to update their profile image, cover image, name, username, and bio.
+ *
+ * @returns {JSX.Element} The rendered EditModal component.
+ */
 const EditModal = () => {
   const { data: currentUser } = useCurrentUser();
   const { mutate: mutateFetchedUser } = useUser(currentUser?.id);
@@ -19,6 +25,7 @@ const EditModal = () => {
   const [username, setUsername] = useState("");
   const [bio, setBio] = useState("");
 
+  // Set initial values for form fields from currentUser data
   useEffect(() => {
     setProfileImage(currentUser?.profileImage);
     setCoverImage(currentUser?.coverImage);
@@ -35,10 +42,14 @@ const EditModal = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
+  /**
+   * Callback function to handle form submission. Updates user profile information.
+   */
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
 
+      // Send a PATCH request to update user profile information
       await axios.patch("/api/edit", {
         name,
         username,

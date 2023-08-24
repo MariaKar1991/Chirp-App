@@ -4,16 +4,35 @@ import { useCallback } from "react";
 
 import useUser from "@/hooks/useUser";
 
+/**
+ * Props for the Avatar component.
+ *
+ * @typedef {Object} AvatarProps
+ * @property {string} userId - The ID of the user.
+ * @property {boolean} [isLarge] - Indicates whether the avatar should be displayed as large.
+ * @property {boolean} [hasBorder] - Indicates whether the avatar should have a border.
+ */
 interface AvatarProps {
   userId: string;
   isLarge?: boolean;
   hasBorder?: boolean;
 }
 
+/**
+ * Component for rendering a user's avatar with optional features.
+ *
+ * @component
+ * @param {AvatarProps} props - Props containing user ID and optional features.
+ */
 const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
   const { data: fetchedUser } = useUser(userId);
   const router = useRouter();
 
+  /**
+   * Event handler to navigate to the user's profile page.
+   *
+   * @param {Event} event - The click event.
+   */
   const onClick = useCallback(
     (event: any) => {
       event.stopPropagation();

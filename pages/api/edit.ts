@@ -4,6 +4,12 @@ import serverAuth from "@/libs/serverAuth";
 
 import prisma from "@/libs/prismadb";
 
+/**
+ * API handler for updating the current user's profile information.
+ * @param req - The NextApiRequest object representing the incoming request.
+ * @param res - The NextApiResponse object representing the response to send.
+ * @returns The response with the updated user's information or an error status.
+ */
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse

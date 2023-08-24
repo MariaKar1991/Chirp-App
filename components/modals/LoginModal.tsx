@@ -9,6 +9,12 @@ import { useCallback, useState } from "react";
 import Input from "../Input";
 import Modal from "../Modal";
 
+/**
+ * LoginModal component provides a modal for user login. Users can input their
+ * email and password to sign in using their credentials.
+ *
+ * @returns {JSX.Element} The rendered LoginModal component.
+ */
 const LoginModal = () => {
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
@@ -17,6 +23,9 @@ const LoginModal = () => {
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  /**
+   * Toggle between login and register modals.
+   */
   const onToggle = useCallback(() => {
     if (isLoading) {
       return;
@@ -26,10 +35,14 @@ const LoginModal = () => {
     registerModal.onOpen();
   }, [loginModal, registerModal, isLoading]);
 
+  /**
+   * Submit the login form and attempt user authentication.
+   */
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
 
+      // Sign in using provided email and password
       await signIn("credentials", {
         email,
         password,
@@ -43,6 +56,7 @@ const LoginModal = () => {
     }
   }, [loginModal, email, password]);
 
+  // Render the body content of the modal
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Input
@@ -80,6 +94,7 @@ const LoginModal = () => {
     </div>
   );
 
+  // Render the LoginModal component
   return (
     <Modal
       disabled={isLoading}
