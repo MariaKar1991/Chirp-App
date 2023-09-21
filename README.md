@@ -4,7 +4,6 @@
 #### Social Media App with features such as login, register, notifications, edit profile, following other users, and commenting.
 #### Link to Website via Vercel: https://chirp-social-media-app.vercel.app/
 
-
 <img width="496" alt="Screenshot 2023-09-12 at 13 48 31" src="https://github.com/MariaKar1991/Chirp-Social-Media-App/assets/82884186/22cd3179-a46d-45f0-a421-9ca90aebcea6">
 <img width="496" alt="Screenshot 2023-09-12 at 13 49 04" src="https://github.com/MariaKar1991/Chirp-Social-Media-App/assets/82884186/5e50ee3d-dca0-4f1b-9485-d30d8b7fb902">
 <img width="496" alt="Screenshot 2023-09-12 at 13 49 55" src="https://github.com/MariaKar1991/Chirp-Social-Media-App/assets/82884186/b4310715-7c19-4049-8d2b-deb439a4779e">
