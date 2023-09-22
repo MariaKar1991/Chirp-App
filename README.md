@@ -1,9 +1,7 @@
 ## Chirp Social Media App
 ### MERN STACK
 ### MongoDB Atlas, Express.js, React, Node.js, Tailwind CSS
-#### Social Media App with features such as login, register, notifications, edit profile, following other users, and commenting.
-#### Link to Website via Vercel: https://chirp-social-media-app.vercel.app/
-
+#### Social Media App with features such as login, register, notifications, edit profile, following other users, and commenting
 
 <img width="1440" alt="Screenshot 2023-09-21 at 22 44 54" src="https://github.com/MariaKar1991/Chirp-Social-Media-App/assets/82884186/3ac8b502-d02e-42ae-b66e-4566aa2cac62">
 <img width="1440" alt="Screenshot 2023-09-21 at 22 42 54" src="https://github.com/MariaKar1991/Chirp-Social-Media-App/assets/82884186/7be05bc5-b573-41b9-80c8-06ffabd42c63">
