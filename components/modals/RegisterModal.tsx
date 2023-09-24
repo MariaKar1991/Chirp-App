@@ -51,6 +51,8 @@ const RegisterModal = () => {
         name,
       });
 
+      setIsLoading(false);
+
       // Show success message.
       toast.success("Account created.");
 
@@ -73,29 +75,29 @@ const RegisterModal = () => {
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Input
+        disabled={isLoading}
         placeholder="Email"
-        onChange={(e) => setEmail(e.target.value)}
         value={email}
-        disabled={isLoading}
+        onChange={(e) => setEmail(e.target.value)}
       />
       <Input
+        disabled={isLoading}
         placeholder="Name"
-        onChange={(e) => setName(e.target.value)}
         value={name}
-        disabled={isLoading}
+        onChange={(e) => setName(e.target.value)}
       />
       <Input
+        disabled={isLoading}
         placeholder="Username"
-        onChange={(e) => setUsername(e.target.value)}
         value={username}
-        disabled={isLoading}
+        onChange={(e) => setUsername(e.target.value)}
       />
       <Input
+        disabled={isLoading}
         placeholder="Password"
         type="password"
-        onChange={(e) => setPassword(e.target.value)}
         value={password}
-        disabled={isLoading}
+        onChange={(e) => setPassword(e.target.value)}
       />
     </div>
   );

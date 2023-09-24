@@ -24,18 +24,6 @@ const LoginModal = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   /**
-   * Toggle between login and register modals.
-   */
-  const onToggle = useCallback(() => {
-    if (isLoading) {
-      return;
-    }
-
-    loginModal.onClose();
-    registerModal.onOpen();
-  }, [loginModal, registerModal, isLoading]);
-
-  /**
    * Submit the login form and attempt user authentication.
    */
   const onSubmit = useCallback(async () => {
@@ -48,13 +36,24 @@ const LoginModal = () => {
         password,
       });
 
+      toast.success("Logged in");
+
       loginModal.onClose();
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong");
     } finally {
       setIsLoading(false);
     }
-  }, [loginModal, email, password]);
+  }, [email, password, loginModal]);
+
+  /**
+   * Toggle between login and register modals.
+   */
+
+  const onToggle = useCallback(() => {
+    loginModal.onClose();
+    registerModal.onOpen();
+  }, [loginModal, registerModal]);
 
   // Render the body content of the modal
   const bodyContent = (
