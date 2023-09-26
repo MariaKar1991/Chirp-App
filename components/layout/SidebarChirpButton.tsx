@@ -5,7 +5,7 @@ import { FaFeather } from "react-icons/fa";
 import useLoginModal from "@/hooks/useLoginModal";
 
 /**
- * SidebarChirpButton component represents the button for creating a new tweet.
+ * SidebarChirpButton component represents the button for creating a new chirp.
  * When clicked, it opens the login modal if the user is not authenticated.
  *
  * @returns {JSX.Element} The rendered SidebarChirpButton component.
@@ -15,7 +15,7 @@ const SidebarChirpButton = () => {
   const loginModal = useLoginModal();
 
   /**
-   * Callback function to handle the click event of the tweet button.
+   * Callback function to handle the click event of the chirp button.
    * Opens the login modal if the user is not authenticated.
    */
   const onClick = useCallback(() => {
