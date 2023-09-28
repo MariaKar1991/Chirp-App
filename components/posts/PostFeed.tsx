@@ -19,7 +19,7 @@ interface PostFeedProps {
  * @component
  * @param {PostFeedProps} props - Props containing the user's ID for filtering posts.
  */
-const PostFeed: React.FC<PostFeedProps> = ({ userId }) => {
+const PostFeed: React.FC<PostFeedProps> = ({ userId = " "}) => {
   /**
    * Fetch posts using the usePosts hook.
    *
