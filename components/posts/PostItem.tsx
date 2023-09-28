@@ -27,7 +27,7 @@ interface PostItemProps {
  * @component
  * @param {PostItemProps} props - Props containing the post data and user's ID.
  */
-const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
+const PostItem: React.FC<PostItemProps> = ({ data = {}, userId = " "}) => {
   const router = useRouter();
   const loginModal = useLoginModal();
 
