@@ -25,6 +25,8 @@ const PostFeed: React.FC<PostFeedProps> = ({ userId = " "}) => {
    *
    * @type {Array.<Object>}
    */
+
+  console.log("userId:", userId);
   const { data: posts = [] } = usePosts(userId);
 
   return (
