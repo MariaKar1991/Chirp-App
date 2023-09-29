@@ -47,7 +47,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
 
       const url = isComment ? `/api/comments?postId=${postId}` : "/api/posts";
 
-      await axios.post(url, { body });
+      await axios.post("/api/posts", { body });
 
       toast.success("Chirp created");
       setBody("");
