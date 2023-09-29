@@ -10,7 +10,7 @@ import fetcher from "@/libs/fetcher";
  * @returns {Object} An object containing the list of users, error, loading state, and mutate function.
  */
 const useUsers = () => {
-  const { data, error, isLoading, mutate } = useSWR("/api/users/", fetcher);
+  const { data, error, isLoading, mutate } = useSWR("/api/users", fetcher);
 
   return {
     data,
