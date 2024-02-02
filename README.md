@@ -1,7 +1,29 @@
 ## Chirp Social Media App
 ### MERN STACK
 ### MongoDB Atlas, Express.js, React, Node.js, Tailwind CSS
-#### Social Media App with features such as login, register, notifications, edit profile, following other users, and commenting
+
+A full-stack social media application built with the MERN stack (MongoDB, Express.js, React, Node.js) and Tailwind CSS. This app includes features such as user authentication, profile editing, following other users, receiving notifications, and engaging in discussions through comments.
+
+## Description
+
+The MERN Social Media App is a comprehensive platform that enables users to connect with others, share updates, and engage in discussions. With features like user authentication, notifications, profile editing, following other users, and commenting on posts, this app offers a complete social media experience.
+
+## Features
+
+- User registration and login.
+- Personalized notifications.
+- Editable user profiles.
+- Follow other users to stay updated.
+- Comment on posts and engage in discussions.
+
+## Technologies Used
+
+- MongoDB (Atlas)
+- Express.js
+- React.js
+- Node.js
+- Tailwind CSS
+
 
 <img width="1440" alt="Screenshot 2023-09-21 at 22 44 54" src="https://github.com/MariaKar1991/Chirp-Social-Media-App/assets/82884186/3ac8b502-d02e-42ae-b66e-4566aa2cac62">
 <img width="1440" alt="Screenshot 2023-09-21 at 22 42 54" src="https://github.com/MariaKar1991/Chirp-Social-Media-App/assets/82884186/7be05bc5-b573-41b9-80c8-06ffabd42c63">
