@@ -31,4 +31,3 @@ The MERN Social Media App is a comprehensive platform that enables users to conn
 <img width="1440" alt="Screenshot 2023-09-21 at 22 45 29" src="https://github.com/MariaKar1991/Chirp-Social-Media-App/assets/82884186/a383a2cd-7e78-4850-9669-7526ab11fad7">
 <img width="1440" alt="Screenshot 2023-09-21 at 22 45 56" src="https://github.com/MariaKar1991/Chirp-Social-Media-App/assets/82884186/4eb940de-577c-4945-975e-10deb918ac61">
 <img width="1440" alt="Screenshot 2023-09-21 at 22 46 43" src="https://github.com/MariaKar1991/Chirp-Social-Media-App/assets/82884186/4715c71d-d868-467e-9fe2-c8ebae3d51e7">
-<img width="1440" alt="Screenshot 2023-08-24 at 14 35 10" src="https://github.com/MariaKar1991/Chirp-Social-Media-App/assets/82884186/6317a206-25c0-40df-85a3-019d2cd44a73">
